@@ -1,0 +1,24 @@
+{
+  "name": "crud-app",
+  "version": "1.0.0",
+  "description": "Practicing Node, Express and MongoDB.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bojan09/crud-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bojan09/crud-app/issues"
+  },
+  "homepage": "https://github.com/bojan09/crud-app#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "mongodb": "^4.8.0"
+  }
+}
