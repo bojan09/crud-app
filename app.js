@@ -30,11 +30,20 @@ app.get("/", (req, res) => {
 });
 
 app.get("/books", (req, res) => {
+  // this will give us the value of the page requested
+  const page = req.query.page || 0;
+  // how many books per page, are we sending back
+  const booksPerPage = 3;
+
   let books = [];
   // getting all the books from the bookstore
   db.collection("books")
     .find()
     .sort({ author: 1 })
+    // if we pass 0 it will show first 3 books
+    // if we pass 1 it will show next 3 books, and it will skip previous 3, and so on
+    .skip(page * booksPerPage)
+    .limit(booksPerPage)
     // gives us an array of all of our books
     .forEach((book) => books.push(book))
     .then(() => {
